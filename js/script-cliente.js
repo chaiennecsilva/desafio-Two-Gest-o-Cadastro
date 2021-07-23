@@ -1,3 +1,18 @@
+const insertIntoTable = (tableId = '', values = []) => {
+    let tbody= document.getElementById(tableId);
+    let tr = tbody.insertRow()
+    values.forEach((valor, index) => {
+        let cell = tr.insertCell(index)
+        cell.appendChild(document.createTextNode(valor))
+    })
+}
+
+// Carrega LocalStorage
+let clientes = JSON.parse(localStorage.getItem('cliente')) ?? [];
+
+// Adiciona clientes do LocalStorage na tabela
+clientes.forEach(c => insertIntoTable('tabela-clientes', Object.values(c)))
+
 let form = document.getElementById('formulario');
 
 form.addEventListener('submit', (e) => {
@@ -25,17 +40,9 @@ form.addEventListener('submit', (e) => {
         swal('Telefone inválido!', 'Digite o telefone valido', 'error');
     }else{
         let valoresDados = Object.values(dados);
-
-        let tbody= document.getElementById('tabela-clientes');
-        let tr = tbody.insertRow()
-        valoresDados.forEach((valor, index) => {
-            let cell = tr.insertCell(index)
-            cell.appendChild(document.createTextNode(valor))
-        })
+        insertIntoTable('tabela-clientes', valoresDados)
 
         //Incluir cliente no localstorage
-        let clientes = JSON.parse(localStorage.getItem('cliente')) ?? [];
-
         clientes.push(dados);
 
         let clientesConvertidos = JSON.stringify(clientes);
