@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestão de Cadastros">
+    <meta name="author" content="Chaienne Cristina">
+    <title>Velas Chayn</title>
+    <link rel="shortcut icon" type="image/png" href="/img/icon/logo3.png" />
+    <link href="./css/styles.css" rel="stylesheet" />
+    <script type = "text/javascript" src="index.js"></script> 
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    
+</head>
+<body> 
+    <header>
+        <h1>Cadastro de Clientes</h1>
+            <i class="fa fa-user fa-sm"></i>
+    </header>
+
+    <main class="container-cadastro">
+    
+        <!-- Form Cadastrar Cliente  -->
+        <form action="#" method="post" id="formulario">
+            <div class="form-campos">
+                <div class="label-input">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="Nome Completo" class="input" required />
+                </div>
+                <div class="label-input">
+                    <label for="cpf">CPF (somente números)</label>
+                    <input type="number" name="cpf" id="cpf" placeholder="00000000000" class="input" required />
+                </div>
+                <div class="label-input">
+                    <label for="endereço">Endereço</label>
+                    <input type="text" name="endereço" id="endereço" placeholder="Endereço" class="input" required />
+                </div>
+                <div class="label-input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="nome@email.com" class="input" required />
+                </div>
+                <div class="label-input">
+                    <label for="telefone">Telefone (somente números)</label>
+                    <input type="number" name="telefone" id="telefone" placeholder="DD999999999" class="input" required />
+                </div>
+            </div>
+            <input type="submit" class="botao" value="Cadastrar Cliente" />
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Email</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-clientes"></tbody>
+        </table>
+
+        <a href="index.html">
+            <button class="botao"> Voltar </button>
+        </a>
+
+    </main>
+
+    <script src="js/script-cliente.js"></script>
+    
+    <div id="rodape">
+        <footer id="myFooter">
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/chaiennecsilva/" class="social-icons"><i class="fa fa-linkedin"></i></a>
+                <a href="https://github.com/chaiennecsilva" class="social-icons"><i class="fa fa-github"></i></a>
+                <p class="footer-copyright">© 2021 Copyright - Velas Chayn - Desenvolvido por Chaienne Silva</p>
+            </div>
+        </footer>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
+        
+
+    
+</body>
+     
+</html>
