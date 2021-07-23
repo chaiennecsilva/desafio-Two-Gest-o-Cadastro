@@ -122,10 +122,6 @@ input[type=number] {
     color: #fff;
 }
 
-.container-cadastro table td, th {
-    width: 25%;
-}
-
 .container-cadastro table thead {
     background-color: #008080;
 }
@@ -143,7 +139,7 @@ input[type=number] {
 #myFooter{
     position:absolute;
     bottom:0;
-    width:100%;  
+    width:100%;
 }
 #myFooter .footer-copyright{
     margin-bottom: 3px;
@@ -187,7 +183,7 @@ input[type=number] {
 }
 
 #myFooter .fa-linkedin:focus{
-    color: #2b55ff; 
+    color: #2b55ff;
 }
 
 #myFooter .fa-github:hover{
@@ -196,4 +192,11 @@ input[type=number] {
 
 #myFooter .fa-github:focus{
     color:purple;
+}
+
+@media (max-width: 750px) {
+    .container-cadastro {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
