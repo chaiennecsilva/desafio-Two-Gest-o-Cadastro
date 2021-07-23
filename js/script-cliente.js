@@ -7,18 +7,18 @@ form.addEventListener('submit', (e) => {
     let nome = document.getElementById('nome').value;
     let cpf = document.getElementById('cpf').value;
     let email = document.getElementById('email').value;
-    let endereço = document.getElementId('endereço').value;
+    let endereco = document.getElementById('endereco').value;
     let telefone = document.getElementById('telefone').value;
 
     let dados = {
          nome,
          cpf,
          email,
-         endereço,
+         endereco,
          telefone
     };
 
-    //Validar telefone e email 
+    //Validar telefone e email
     if(dados.cpf.length !== 11){
         swal('CPF inválido!', 'Digite o CPF valido', 'error');
     }else if(dados.telefone.length !== 11){
@@ -27,14 +27,11 @@ form.addEventListener('submit', (e) => {
         let valoresDados = Object.values(dados);
 
         let tbody= document.getElementById('tabela-clientes');
-        let tr = document.getElementById('tr');
-        tbody.append(tr);
-
-        valoresDados.forEach(valor => {
-            let td = document.getElementById('td');
-            tr.append(td);
-            td.append(valor);
-        });
+        let tr = tbody.insertRow()
+        valoresDados.forEach((valor, index) => {
+            let cell = tr.insertCell(index)
+            cell.appendChild(document.createTextNode(valor))
+        })
 
         //Incluir cliente no localstorage
         let clientes = JSON.parse(localStorage.getItem('cliente')) ?? [];
@@ -45,6 +42,6 @@ form.addEventListener('submit', (e) => {
 
         localStorage.setItem('cliente', clientesConvertidos);
 
-        swal('Deu certo!', 'Cliente cadastrado com sucesso!', 'sucess');
+        swal('Deu certo!', 'Cliente cadastrado com sucesso!', 'success');
     }
 });
