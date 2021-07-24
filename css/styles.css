@@ -122,10 +122,6 @@ input[type=number] {
     color: #fff;
 }
 
-.container-cadastro table td, th {
-    width: 25%;
-}
-
 .container-cadastro table thead {
     background-color: #008080;
 }
@@ -150,7 +146,6 @@ input[type=number] {
     text-align: center;
     color: #fff;
 }
-
 
 #myFooter a{
     color: #fff;
@@ -196,4 +191,11 @@ input[type=number] {
 
 #myFooter .fa-github:focus{
     color:purple;
+}
+
+@media (max-width: 750px){
+    .container-cadastro{
+        margin-left: 10px;
+        margin-right:10px;
+    }
 }

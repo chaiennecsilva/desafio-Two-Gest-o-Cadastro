@@ -7,7 +7,7 @@ form.addEventListener('submit', (e) => {
     let codigo = document.getElementById('codigo').value;
     let nome = document.getElementById('nome').value;
     let unitario = document.getElementById('custo').value;
-    let preco = document.getElementById('preco').value;
+    let preco = document.getElementById('venda').value;
    
 
     let dados = {
@@ -20,14 +20,11 @@ form.addEventListener('submit', (e) => {
     let valoresDados = Object.values(dados);
 
     let tbody= document.getElementById('tabela-produtos');
-    let tr = document.getElementById('tr');
-    tbody.append(tr);
-
-    valoresDados.forEach(valor => {
-        let td = document.getElementById('td');
-        tr.append(td);
-        td.append(valor);
-    });
+    let tr= tbody.insertRow()
+    valoresDados.forEach((valor, index)=>{
+        let cell = tr.insertCell(index)
+        cell.appendChild(document.createTextNode(valor))
+    })
 
         //Incluir produto no localstorage
         let produtos = JSON.parse(localStorage.getItem('produto')) ?? [];
@@ -38,6 +35,6 @@ form.addEventListener('submit', (e) => {
 
         localStorage.setItem('produto', produtosConvertidos);
 
-        swal('Deu certo!', 'Produto cadastrado com sucesso!', 'sucess');
+        swal('Deu certo!', 'Produto cadastrado com sucesso!', 'success');
 
 });
