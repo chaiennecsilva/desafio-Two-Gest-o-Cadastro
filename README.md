@@ -9,7 +9,7 @@ Ao enviar as informações, elas são adicionadas à tabela presente na página 
 ![CapturaProdutosLista](https://user-images.githubusercontent.com/86750844/126855295-40e8171f-d0a2-4f0f-8da9-659af9d4da49.PNG)
 
 
-Você pode conferir o projeto em: Gestão de Cadastros
+Você pode conferir o projeto em: 
 
 👩‍💻 Tecnologias envolvidas no desenvolvimento do Desafio Two.
 
